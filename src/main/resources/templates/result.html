@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Search Result</title>
+</head>
+<body>
+	<h1>
+		Search query: <span th:text="${query}"></span>
+	</h1>
+	<table>
+		<tr>
+			<th>Number</th>
+			<th>Title</th>
+			<th>URL</th>
+		</tr>
+		<div th:each="row,iterStat : ${Rows}">
+			<tr>
+				<td><a th:text="${iterStat.index +1}"> </a></td>
+				<td><a th:href="${row.FromURL}" th:text="${row.Title}"></a></td>
+				<td><a th:href="${row.FromURL}" th:text="${row.FromURL}"></a></td>
+			</tr>
+		</div>
+	</table>
+</body>
+<style>
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+ul.pagination {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+ul.pagination li {
+	display: inline;
+}
+
+ul.pagination li a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+</style>
+</html>
+

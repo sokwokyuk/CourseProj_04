@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Search Result</title>
+</head>
+<body>
+	<h1>Search query: <span th:text="${query}"></span></h1>
+	<div th:each="url,iterStat : ${URLs}">
+		<a th:text="${iterStat.index +1}"> </a> 
+		<a th:href="${url}" th:text="${url}"></a>
+	</div>
+</body>
+</html>

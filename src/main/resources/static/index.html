@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>WWW Search Engine</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<div class="form">
+		<h2>Hello, World!</h2>
+		<form action="/keyword" method="get">
+			<fieldset>
+				<legend>Search:</legend>
+				Keyword: <input name="keywords" required />
+				<button type="submit">Search</button>
+			</fieldset>
+		</form>
+		<form action="/keyphrase" method="get">
+			<fieldset>
+				<legend>Search:</legend>
+				Key Phrase: <input name="keyphrase" required />
+				<button type="submit">Search</button>
+			</fieldset>
+		</form>
+	</div>
+</body>
+<style>
+div.form {
+	display: block;
+	text-align: center;
+}
+
+form {
+	margin-left: auto;
+	margin-right: auto;
+	font-family: arial, sans-serif;
+	width: 50%;
+	display: inline-block;
+	padding-top: 50px;
+}
+</style>
+</html>
